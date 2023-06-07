@@ -3,6 +3,7 @@
   <input #searchBox id="search-box" (input)="search(searchBox.value)" />
 
   <ul class="search-result">
+    <!-- asyncを使用するとAngularのAsyncPipeが識別され、Observableが自動的にサブスクライブされるため、コンポーネントクラスでこれを行う必要はない -->
     <li *ngFor="let hero of heroes$ | async">
       <a routerLink="/detail/{{ hero.id }}">
         {{ hero.name }}
